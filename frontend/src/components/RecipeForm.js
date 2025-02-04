@@ -19,10 +19,10 @@ const RecipeForm = () => {
     };
  
     try {
-      await axios.post(' ', newRecipe);
+      await axios.post('/api/recipes', newRecipe);
       alert('Recipe added successfully!');
     } catch (error) {
-      console.error('There was an error adding the recipe!', error);
+      console.error('Error adding recipe', error);
     }
   };
  
