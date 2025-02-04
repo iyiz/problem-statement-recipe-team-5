@@ -15,7 +15,7 @@ const RecipeDetails = () => {
         <p><strong>Cooking Instructions: </strong>{recipe.instructions}</p>
         <p><strong>Preparation time:</strong>{recipe.preptime}</p>
         <p><strong>Difficulty level:</strong> {recipe.difficulty}</p>
-        <p>{formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })}</p>
+        <p>{formatDistanceToNow(new Date(recipe.createdAt), { addSuffix: true })}</p>
         <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
       </div>
     );
