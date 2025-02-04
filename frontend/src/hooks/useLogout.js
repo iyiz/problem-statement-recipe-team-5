@@ -1,20 +1,19 @@
-<<<<<<< HEAD
-import { RecipesContext } from './RecipesContext';
+import { useAuthContext } from './useAuthContext';
+import { useRecipesContext } from './useRecipeContext';
 
 export const useLogout = () => {
-  const { dispatch } = RecipesContext();
-=======
-import { useAuthContext } from './useAuthContext'
-import { useRecipesContext } from './useRecipeContext'
-
-export const useLogout = () => {
-  const { dispatch } = useAuthContext()
-  const { dispatch: dispatchWorkouts } = useRecipesContext()
->>>>>>> aed30cf7f92137b20bd8a77d86ac801488bad49f
+  const { dispatch } = useAuthContext(); // Handles authentication logout
+  const { dispatch: dispatchRecipes } = useRecipesContext(); // Handles clearing recipes on logout
 
   const logout = () => {
-    // Implement logout functionality
+    // Clear authentication state
     dispatch({ type: 'LOGOUT' });
+
+    // Clear recipes from state
+    dispatchRecipes({ type: 'SET_RECIPES', payload: [] });
+
+    // Remove token from localStorage
+    localStorage.removeItem('user');
   };
 
   return { logout };
