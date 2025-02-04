@@ -3,17 +3,26 @@
 
 /* layout */
 :root {
-  --primary: #1aac83;
-  --error: #e7195a;
+  --primary: #2563EB; /* New primary color: blue */
+  --error: #e74c3c; /* New error color: red */
+  --background: #121212; /* New background color: light grey */
+  --text-color: #fff; /* New text color: dark blue */
+  --border-color: #bdc3c7; /* New border color: grey */
+  --box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Slightly darker shadow */
 }
+
 body {
-  background: #f1f1f1;
+  background: var(--background);
   margin: 0;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
 }
+
 header {
-  background: #fff;
+  background: #141414;
+  box-shadow: var(--box-shadow);
 }
+
 header .container {
   max-width: 1400px;
   margin: 0 auto;
@@ -22,11 +31,18 @@ header .container {
   align-items: center;
   justify-content: space-between;
 }
+
 header a {
-  color: #333;
+  color: var(--text-color);
   text-decoration: none;
+  transition: color 0.3s;
 }
-.pages{
+
+header a:hover {
+  color: var(--primary);
+}
+
+.pages {
   max-width: 1400px;
   padding: 20px;
   margin: 0 auto;
@@ -36,59 +52,87 @@ header a {
 .home {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  gap: 100px;
+  gap: 50px;
 }
-.workout-details {
+
+.recipe-details {
   background: #fff;
   border-radius: 4px;
   margin: 20px auto;
   padding: 20px;
   position: relative;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s;
 }
-.workout-details h4 {
+
+.recipe-details:hover {
+  transform: translateY(-5px);
+}
+
+.recipe-details h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
   color: var(--primary);
 }
-.workout-details p {
+
+recipe-details p {
   margin: 0;
   font-size: 0.9em;
   color: #555;
 }
-.workout-details span {
+
+.recipe-details span {
   position: absolute;
   top: 20px;
   right: 20px;
   cursor: pointer;
-  background: #f1f1f1;
+  background: var(--background);
   padding: 6px;
   border-radius: 50%;
-  color: #333;
+  color: var(--text-color);
+  transition: background 0.3s;
 }
 
-/* new workout form */
+.recipe-details span:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* new recipe form */
 label, input {
   display: block;
 }
+
 input {
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 20px;
   width: 100%;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   box-sizing: border-box;
+  transition: border-color 0.3s;
 }
+
+input:focus {
+  border-color: var(--primary);
+}
+
 form button {
   background: var(--primary);
   border: 0;
   color: #fff;
   padding: 10px;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   border-radius: 4px;
   cursor: pointer;
+  transition: background 0.3s;
 }
+
+form button:hover {
+  background: darken(var(--primary), 10%);
+}
+
 div.error {
   padding: 10px;
   background: #ffefef;
@@ -97,6 +141,7 @@ div.error {
   border-radius: 4px;
   margin: 20px 0;
 }
+
 input.error {
   border: 1px solid var(--error);
 }
