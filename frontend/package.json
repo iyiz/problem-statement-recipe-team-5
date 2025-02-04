@@ -8,11 +8,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.5",
-<<<<<<< HEAD
-    "react-scripts": "^5.0.1"
-=======
     "react-scripts": "5.0.1"
->>>>>>> 6e67d9438c100fe6f4f53d16f53e5c0260e2be06
   },
   "scripts": {
     "start": "react-scripts start",
