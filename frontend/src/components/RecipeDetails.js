@@ -1,12 +1,12 @@
-//import {useRecipeContext} from '../hooks/useRecipeContext';
-//import {useAuthContext} from '../hooks/useAuthContext';
+import {useRecipeSContext} from '../hooks/useRecipeContext';
+import {useAuthContext} from '../hooks/useAuthContext';
 
 //date fns
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 
 const RecipeDetails = () => {
-    //const {recipe} = useRecipeContext();
-    //const {user} = useAuthContext();
+    const {recipe} = useRecipeSContext();
+    const {user} = useAuthContext();
     
     return (
         <div className="recipe-details">
@@ -20,3 +20,5 @@ const RecipeDetails = () => {
       </div>
     );
     }
+
+export default RecipeDetails;
