@@ -9,6 +9,7 @@ function App() {
       <header className="App-header">
         <p>
           Edit <code>src/App.js</code> and save to reload.
+          LET'S DO IT
         </p>
         <a
           className="App-link"
