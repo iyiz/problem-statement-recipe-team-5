@@ -1,7 +1,7 @@
 import { useRecipesContext } from '../hooks/useRecipeContext';
 import { useAuthContext } from '../hooks/useAuthContext';
 
-// date-fns
+//date fns
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 
 const RecipeDetails = ({ recipe }) => {
